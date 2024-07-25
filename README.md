@@ -41,12 +41,7 @@ aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/ada
 
 The model is trained using the `nodes.common_ksampler` function with the specified configuration.
 
-## Evaluation
--------------
-![Alt text](SD3.png)
 
-
-The generated image is displayed using PIL.
 
 ## Code
 -----
@@ -103,3 +98,14 @@ with torch.inference_mode():
     decoded = vae.decode_tiled(sample).detach()
 
 Image.fromarray(np.array(decoded*255, dtype=np.uint8)[0])
+```
+## Evaluation
+Prompt=  generate an Epic anime artwork of a wizard atop a mountain at night casting a cosmic spell into the dark sky that says "Himanshu Goyal" made out of colorful energy
+
+
+SD 3 predicted image
+![Alt text](SD3.png)
+
+
+Meta AI predicted image
+![Alt text](meta-stable-diffusion.jpeg)
